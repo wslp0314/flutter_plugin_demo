@@ -1,5 +1,6 @@
 #import "FlutterPluginOldPlugin.h"
 #import "FlutterPluginOldPluginEvent.h"
+#import "WXApi.h"
 
 @implementation FlutterPluginOldPlugin
 
@@ -11,6 +12,7 @@ FlutterPluginOldPluginEvent *pluginEvent;
                                      binaryMessenger:[registrar messenger]];
     FlutterPluginOldPlugin* instance = [[FlutterPluginOldPlugin alloc] init];
     [registrar addMethodCallDelegate:instance channel:channel];
+    
     
     //注册ios原生  派发事件
     pluginEvent = [[FlutterPluginOldPluginEvent alloc] init];
@@ -43,7 +45,10 @@ FlutterPluginOldPluginEvent *pluginEvent;
               @"info":@"ios层 ------ 姜贞羽  被我干哭了"
                     });
       }
-  } else {
+  } else if ([@"pushSquarePage" isEqualToString:call.method]) {
+      NSLog(@"---------------我想要跳转---------------");
+      
+  }  else {
     result(FlutterMethodNotImplemented);
   }
 }

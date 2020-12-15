@@ -16,6 +16,9 @@ A new Flutter plugin use old launage
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
+
+  s.dependency 'WechatOpenSDK'
+
   s.platform = :ios, '8.0'
 
   # Flutter.framework does not contain a i386 slice.
